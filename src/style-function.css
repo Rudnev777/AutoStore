@@ -220,4 +220,94 @@ a {
 
 
 
+/* Медиа-запросы для адаптивности */
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+  .catalog {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .catalog-product-card {
+    width: 70%;
+    height: 60%;
+  }
+  
+  .section-search-string {
+    width: 40%;
+  }
+  
+  main {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .product-card {
+    width: 90%;
+  }
+  
+  .product-pard-photo {
+    width: 25%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto; 
+    grid-template-areas:
+      "back title user"
+      "search search search";
+    align-items: center;
+   
+  }
+
+  .button-back {
+    grid-area: back;
+    justify-self: start;
+  }
  
+  h1 {
+    grid-area: title;
+    text-align: center;
+    justify-self: center; 
+  }
+ 
+  .button-img-header {
+    grid-area: user;
+    justify-self: end;
+  }
+  
+  .section-search-string {
+    grid-area: search;
+    width: 90%;
+    display: flex;
+    gap: 10px;
+    
+  }
+}
+
+
+
+
+
+/* Адаптивность для hover эффектов на тач-устройствах */
+@media (hover: none) and (pointer: coarse) {
+  .catalog-product-card:hover,
+  .product-pard-button-buy:hover {
+    transform: none;
+  }
+  
+  .catalog-product-card:active {
+    transform: translateY(-5px);
+  }
+  
+  .product-pard-button-buy:active {
+    background: #f8ab07;
+    transform: translateY(-2px);
+  }
+}
