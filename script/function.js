@@ -51,6 +51,7 @@ export function create_breadcrumbs() {
   const section = document.createElement("section");
   section.classList.add("section-breadcrumbs");
   let str = window.location.pathname; // получаем путь от начала до данной страницы
+  console.log(str);
   let array_path = [
     ...new Set(str.split("/").filter((item) => item != "index.html")),
   ];
@@ -105,11 +106,11 @@ export function create_product_card() {
   if (Math.floor(Math.random() * 10) % 2 == 1) {
     price_product.textContent = "100$";
     name_product.textContent = "LADA";
-    photo_product.src = "../public/priora.png";
+    photo_product.src = "public/priora.png";
   } else {
     price_product.textContent = "10000$";
     name_product.textContent = "Lexus";
-    photo_product.src = "../public/lexus-lfa.png";
+    photo_product.src = "public/lexus-lfa.png";
   }
   photo_product.classList.add("product-pard-photo");
   btn_buy_product.classList.add("product-pard-button-buy");
