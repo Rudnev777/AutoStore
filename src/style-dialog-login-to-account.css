@@ -1,0 +1,9 @@
+.button-close-login-to-account{
+    border-radius: 50%;
+    background: red;
+}
+
+.dialog-login-to-account{
+    height: 70%;
+    width: 70%;
+}
