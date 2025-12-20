@@ -1,17 +1,5 @@
 @import url("style-dialog-login-to-account.css");
-
-
-:root {
-  --color-bg-body: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  --color-bg-header: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
-  --color-bg-main: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  --color-bg-footer: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
-  --color-a-now: darkgray;
-  --color-a: white;
-  --border-radius: 0.5rem;
-
-
-}
+@import url("style-root.css");
 
 body {
   display: grid;
@@ -36,6 +24,7 @@ header {
 }
 
 main {
+  overflow-y: auto;
   width: 90%;
   padding: 20px;
   background: var(--color-bg-main);
@@ -53,10 +42,14 @@ main {
 }
 
 footer {
+  color: #000000;
   background: var(--color-bg-footer);
   border-radius: var(--border-radius);
   padding: 5px;
   margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .section-breadcrumbs {
   padding: 5px;
@@ -75,6 +68,7 @@ footer {
   background-color: inherit;
   text-align: center;
 }
+.button-img-footer,
 .button-search,
 .button-img-header {
   width: 30px;
@@ -216,61 +210,57 @@ a {
 }
 
 .product-pard-button-buy:hover {
+  
   background: #f8ab07;
   transform: translateY(-2px);
 }
 
+.button-img-footer:hover,
 .button-img-header:hover {
+   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   background: #f8ab07;
   transform: translateY(-2px);
 }
-
 
 @media (max-width: 480px) {
   header {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto; 
+    grid-template-rows: auto auto;
     grid-template-areas:
       "back title user"
       "search search search";
     align-items: center;
-   
   }
 
   .button-back {
     grid-area: back;
     justify-self: start;
   }
- 
+
   h1 {
     grid-area: title;
     text-align: center;
-    justify-self: center; 
+    justify-self: center;
   }
- 
+
   .button-img-header {
     grid-area: user;
     justify-self: end;
   }
-  
+
   .section-search-string {
     grid-area: search;
     width: 90%;
     display: flex;
     gap: 10px;
-    
   }
-  
+
   .catalog-product-card-photo {
-  width: 70%;
-  height: 35%;
+    width: 70%;
+    height: 35%;
+  }
 }
-}
-
-
-
-
 
 /* Адаптивность для hover эффектов на тач-устройствах */
 @media (hover: none) and (pointer: coarse) {
@@ -278,14 +268,13 @@ a {
   .product-pard-button-buy:hover {
     transform: none;
   }
-  
+
   .catalog-product-card:active {
     transform: translateY(-5px);
   }
-  
+
   .product-pard-button-buy:active {
     background: #f8ab07;
     transform: translateY(-2px);
   }
-
 }

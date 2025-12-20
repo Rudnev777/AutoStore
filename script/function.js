@@ -19,58 +19,25 @@ export function create_button_back() {
   });
   container?.prepend(btn_back);
 }
-
-export function create_button_basket() {
-  const container = document.querySelector("header");
-  const btn_basket = document.createElement("img");
-  btn_basket.classList.add("button-img-header");
-  btn_basket.alt = "🛒";
-  btn_basket.src = "public/basket.png";
-  btn_basket.addEventListener("click", () => {
-    window.location.replace("basket.html");
-  });
-  container?.prepend(btn_basket);
+export function create_footer() {
+  create_button_basket();
+  create_button_home_page();
+  create_button_login_to_account();
 }
 
-export function create_button_home_page() {
-  const container = document.querySelector("header");
-  const btn_home_page = document.createElement("img");
-  btn_home_page.classList.add("button-img-header");
-  btn_home_page.alt = "🏠";
-  btn_home_page.src = "public/home.png";
-  btn_home_page.addEventListener("click", () => {
-    window.location.replace("index.html");
-  });
-  container?.prepend(btn_home_page);
-}
-
-export function create_header() {
-  const container = document.querySelector("header");
-  const section = document.createElement("section");
-  const search_string = document.createElement("input");
-  const btn_img_search = document.createElement("img");
+function create_button_login_to_account() {
+    const container = document.querySelector("footer");
   const btn_img_login_to_account = document.createElement("img");
+  btn_img_login_to_account.classList.add("button-img-footer");
   btn_img_login_to_account.alt = "👤";
   btn_img_login_to_account.src = "public/people.png";
-  btn_img_search.alt = "🔍";
-  btn_img_search.src = "public/search.png";
-  btn_img_search.classList.add("button-search");
-  btn_img_login_to_account.classList.add("button-img-header");
-  search_string.classList.add("search-string");
-  section.classList.add("section-search-string");
-  section.append(search_string, btn_img_search);
-  container?.append(section);
-
   container?.append(btn_img_login_to_account);
-
-  btn_img_login_to_account.addEventListener("click", () => {
   
+  btn_img_login_to_account.addEventListener("click", () => {
     const body = document.querySelector("body");
 
- 
-
     const dialog = document.createElement("dialog");
-    dialog.classList.add("dialog-login-to-account")
+    dialog.classList.add("dialog-login-to-account");
     dialog.innerHTML = `
     <button id = "close-login-to-account" class = "button-close-login-to-account">✕</button>
         <h2>Вход в аккаунт</h2>
@@ -87,6 +54,54 @@ export function create_header() {
       dialog.close();
     });
   });
+}
+
+function create_button_basket() {
+  const container = document.querySelector("footer");
+  const btn_basket = document.createElement("img");
+  btn_basket.classList.add("button-img-footer");
+  btn_basket.alt = "🛒";
+  btn_basket.src = "public/basket.png";
+  btn_basket.addEventListener("click", () => {
+    window.location.replace("basket.html");
+  });
+  container?.prepend(btn_basket);
+  const filename = window.location.pathname.split('/').pop();
+  if(filename == "basket.html"){
+    btn_basket.style.boxShadow = "0 0 30px rgba(255, 255, 255, 0.8)";
+  }
+}
+
+function create_button_home_page() {
+  const container = document.querySelector("footer");
+  const btn_home_page = document.createElement("img");
+  btn_home_page.classList.add("button-img-footer");
+  btn_home_page.alt = "🏠";
+  btn_home_page.src = "public/home.png";
+  btn_home_page.addEventListener("click", () => {
+    window.location.replace("index.html");
+  });
+  container?.prepend(btn_home_page);
+   const filename = window.location.pathname.split('/').pop();  
+  if(filename == "index.html"){
+    btn_home_page.style.boxShadow = "0 0 30px rgba(255, 255, 255, 0.8)";
+  }
+}
+
+export function create_header() {
+  const container = document.querySelector("header");
+  const section = document.createElement("section");
+  const search_string = document.createElement("input");
+  const btn_img_search = document.createElement("img");
+
+  btn_img_search.alt = "🔍";
+  btn_img_search.src = "public/search.png";
+  btn_img_search.classList.add("button-search");
+
+  search_string.classList.add("search-string");
+  section.classList.add("section-search-string");
+  section.append(search_string, btn_img_search);
+  container?.append(section);
 }
 
 export function create_breadcrumbs() {

@@ -1,9 +1,17 @@
+@import url("style-root.css");
+
 .button-close-login-to-account{
-    border-radius: 50%;
+    border-radius: var(--border-radius);
     background: red;
 }
 
 .dialog-login-to-account{
-    height: 70%;
-    width: 70%;
+    height: 60%;
+    width: 60%;
+    border-radius: var(--border-radius);
+    background: var(--color-bg-header);
+}
+
+.dialog-login-to-account::backdrop{
+    backdrop-filter: blur(3px);
 }

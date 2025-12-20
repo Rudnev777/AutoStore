@@ -1,0 +1,9 @@
+:root {
+  --color-bg-body: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  --color-bg-header: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
+  --color-bg-main: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  --color-bg-footer: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
+  --color-a-now: darkgray;
+  --color-a: white;
+  --border-radius: 0.5rem;
+}
