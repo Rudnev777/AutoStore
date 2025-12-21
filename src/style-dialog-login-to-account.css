@@ -9,7 +9,7 @@
     height: 60%;
     width: 60%;
     border-radius: var(--border-radius);
-    background: var(--color-bg-header);
+    background: var(--color-bg-widget);
 }
 
 .dialog-login-to-account::backdrop{

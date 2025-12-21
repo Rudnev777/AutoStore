@@ -1,9 +1,20 @@
 :root {
-  --color-bg-body: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  --color-bg-header: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
-  --color-bg-main: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  --color-bg-footer: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
+  --color-bg-background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --color-bg-widget: linear-gradient(135deg, #6c757d 0%, #868e96 100%);
+  --color-a-now: #495057;
+  --color-a: #6c757d;
+  --color-text: #212529;
+  --color-button: #adb5bd;     
+  --color-button-hover: #868e96;
+  --border-radius: 0.5rem;
+}
+
+:root[data-theme="dark"] {
+  --color-bg-background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  --color-bg-widget: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
   --color-a-now: darkgray;
   --color-a: white;
-  --border-radius: 0.5rem;
+  --color-text: black;
+  --color-button: #ffcc00;
+  --color-button-hover: #f8ab07;
 }
