@@ -9,7 +9,7 @@ const path_names = new Map([
   ["detailling", "Детейлинг"],
 ]);
 
-let id = 1;
+let id = 0;
 
 const categories = new Array("battery", "disks", "tires", "detailling");
 
