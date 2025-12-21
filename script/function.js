@@ -26,18 +26,18 @@ class ProductCard {
     const section = document.createElement("div");
     section.classList.add("window-product");
     const photo_product = document.createElement("img");
-    photo_product.classList.add('window-product-photo');
+    photo_product.classList.add("window-product-photo");
     const price_product = document.createElement("span");
-    price_product.classList.add('window-product-span');
+    price_product.classList.add("window-product-span");
     const name_product = document.createElement("span");
-    name_product.classList.add('window-product-span');
+    name_product.classList.add("window-product-span");
     const description_product = document.createElement("span");
-    description_product.classList.add('window-product-span');
+    description_product.classList.add("window-product-span");
 
     photo_product.src = this.image[0];
-    price_product.textContent = "Цена товара: " + this.price+ "₽";
-    name_product.textContent ="Имя товара: " + this.name;
-    description_product.textContent ="Описание: " + this.description;
+    price_product.textContent = "Цена товара: " + this.price + "₽";
+    name_product.textContent = "Имя товара: " + this.name;
+    description_product.textContent = "Описание: " + this.description;
 
     section.append(
       name_product,
@@ -79,82 +79,81 @@ export let catalogProducts = [
   new ProductCard(
     4500,
     "Аккумулятор Varta",
-    ["product/akb-varta.jpg"],
+    ["public/product/akb-varta.jpg"],
     "Varta Blue Dynamic - высококачественный аккумулятор для автомобилей с повышенным энергопотреблением. Емкость 75 А/ч, пусковой ток 680 А. Технология Calcium Plus обеспечивает надежный запуск в любых погодных условиях. Подходит для автомобилей с системой Start-Stop.",
     categories[0]
   ),
   new ProductCard(
     5200,
     "Аккумулятор Bosch",
-    ["product/akb-bosch.jpg"],
+    ["public/product/akb-bosch.jpg"],
     "Bosch S5 Silver - премиальный аккумулятор немецкого производства. Емкость 80 А/ч, пусковой ток 800 А. Инновационная технология Silver позволяет увеличить количество циклов заряда-разряда. Идеален для современных автомобилей с большим количеством электроники.",
     categories[0]
   ),
   new ProductCard(
     3800,
     "Аккумулятор Delta",
-    ["product/delta.jpeg"],
+    ["public/product/delta.jpeg"],
     "Delta GX - японский аккумулятор с технологией EFB (Enhanced Flooded Battery). Емкость 70 А/ч, пусковой ток 600 А. Усиленные пластины обеспечивают устойчивость к глубоким разрядам. Отличное решение для автомобилей с базовой системой Start-Stop.",
     categories[0]
   ),
   new ProductCard(
     12500,
     'Диски литые 17"',
-    ["product/disks-lit.jpg"],
+    ["public/product/disks-lit.jpg"],
     "Легкосплавные литые диски из алюминиевого сплава. Диаметр 17 дюймов, вылет ET45, ширина 7.5J, крепление 5x114.3. Современный дизайн с многолучевой конструкцией. Повышенная прочность при сниженном весе. Подходят для большинства современных седанов и кроссоверов.",
     categories[1]
   ),
   new ProductCard(
     8500,
     "Диски штампованные",
-    ["product/disks-htamp.jpeg"],
+    ["public/product/disks-htamp.jpeg"],
     "Штампованные стальные диски 16 дюймов. Классическое решение для бюджетных автомобилей. Высокая ремонтопригодность и прочность. В комплекте с декоративными колпаками. Подходят для эксплуатации в сложных дорожных условиях. Крепление 4x100, ширина 6.5J.",
     categories[1]
   ),
   new ProductCard(
     6500,
     "Диски стальные",
-    ["product/disks-stal.jpg"],
+    ["public/product/disks-stal.jpg"],
     "Стальные диски R15 для компактных автомобилей. Диаметр 15 дюймов, ширина 6J, вылет ET38. Простая и надежная конструкция. Отличный выбор для зимней резины. Устойчивы к механическим повреждениям. Легко ремонтируются при деформации.",
     categories[1]
   ),
   new ProductCard(
     9500,
     "Летняя резина Bridgestone",
-    ["product/tires-bridgestone.jpg"],
+    ["public/product/tires-bridgestone.jpg"],
     "Bridgestone Turanza T005 - летние шины премиум-класса. Размер 205/55 R16 91V. Асимметричный рисунок протектора обеспечивает отличное сцепление на мокрой и сухой дороге. Технология NanoPro-Tech снижает сопротивление качению. Комфорт, безопасность и экономия топлива.",
     categories[2]
   ),
   new ProductCard(
     11200,
     "Зимняя резина Michelin",
-    ["product/tires-michelin.jpg"],
+    ["public/product/tires-michelin.jpg"],
     "Michelin X-Ice North 4 - зимние шипованные шины для суровых зимних условий. Размер 205/55 R16 94T. 150 шипов на каждую шину обеспечивают уверенное сцепление на льду и укатанном снегу. Специальный состав резины сохраняет эластичность даже при -40°C. Система самоочистки протектора.",
     categories[2]
   ),
   new ProductCard(
     850,
     "Полироль для кузова",
-    ["product/polirol.jpg"],
+    ["public/product/polirol.jpg"],
     "Полироль-воск для автомобиля с нано-защитой. Образует прочное грязеотталкивающее покрытие. Заполняет мелкие царапины и восстанавливает блеск. Содержит УФ-фильтры для защиты краски от выцветания. Легко наносится и снимается. Объем 500 мл, хватает на 3-4 обработки.",
     categories[3]
   ),
   new ProductCard(
     450,
     "Ароматизатор салона",
-    ["product/aromo.jpg"],
+    ["public/product/aromo.jpg"],
     "Ароматизатор для автомобиля 'Свежесть Альп' с системой клип-картридж. Постоянное равномерное распространение аромата. Картриджа хватает на 30-45 дней. Регулируемая интенсивность запаха. Безопасен для аллергиков. Не содержит аэрозолей и газа. Приятный ненавязчивый аромат.",
     categories[3]
   ),
   new ProductCard(
     950,
     "Воск для автомобиля",
-    ["product/vosk.png"],
+    ["public/product/vosk.png"],
     "Жидкий воск-полироль с эффектом гидрофобизации. Создает эффект 'дождевой грязеотталкивающей пленки'. Защищает лакокрасочное покрытие от агрессивных воздействий окружающей среды. Облегчает мойку автомобиля. Эффект держится до 2 месяцев. Подходит для всех типов ЛКП.",
     categories[3]
   ),
 ];
-
 
 export function create_button_back() {
   const container = document.querySelector("header");
@@ -236,6 +235,8 @@ function create_button_home_page() {
 }
 
 export function create_header() {
+
+
   const container = document.querySelector("header");
   const section = document.createElement("section");
   const search_string = document.createElement("input");
@@ -247,6 +248,11 @@ export function create_header() {
 
   search_string.classList.add("search-string");
   section.classList.add("section-search-string");
+
+    const save_theme = localStorage.getItem("theme");
+  if (save_theme) {
+    document.documentElement.setAttribute("data-theme", save_theme);
+  }
   const btn_img_theme = document.createElement("img");
   btn_img_theme.alt = "◐";
   btn_img_theme.src = "public/theme.png";
@@ -254,8 +260,10 @@ export function create_header() {
   btn_img_theme.addEventListener("click", () => {
     if (document.documentElement.getAttribute("data-theme") === "dark") {
       document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
     } else {
       document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
     }
   });
 
