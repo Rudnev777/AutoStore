@@ -15,3 +15,10 @@
 .dialog-login-to-account::backdrop{
     backdrop-filter: blur(3px);
 }
+
+.register-section,
+.login-section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

@@ -27,6 +27,7 @@ header {
 
 main {
   overflow-y: auto;
+  scrollbar-width: none;
   width: 90%;
   padding: 20px;
   background: var(--color-bg-background);
@@ -35,7 +36,6 @@ main {
   align-items: center;
   justify-self: center;
 }
-
 
 footer {
   color: var(--color-text);
@@ -77,29 +77,29 @@ footer {
 }
 
 .button-search {
+   padding: 1px;
   border: none;
 }
 
 .section-search-string {
-  height: 30px;
+  height: 40px;
   width: 35%;
   border-style: solid;
   border-radius: var(--border-radius);
   border-width: thin;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 5px;
-  padding: 5px;
-  margin: 5px;
 }
 
 .search-string {
-  flex: 1;
+  width: 100%;
   background-color: inherit;
   border: none;
   font-size: 20px;
 }
-.search-string:focus {
+input:focus {
   outline: none;
 }
 
@@ -117,7 +117,7 @@ a {
 
 .button-img-footer:hover,
 .button-img-header:hover {
-   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   background: var(--color-button-hover);
   transform: translateY(-2px);
 }
@@ -131,6 +131,7 @@ a {
       "back title user"
       "search search search";
     align-items: center;
+    
   }
 
   .button-back {
@@ -154,11 +155,6 @@ a {
     width: 90%;
     display: flex;
     gap: 10px;
-  }
-
-  .catalog-product-card-photo {
-    width: 70%;
-    height: 35%;
   }
 }
 

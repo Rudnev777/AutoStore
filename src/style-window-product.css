@@ -1,6 +1,7 @@
 @import url("style-root.css");
 
 .window-product{
+    margin: 15px;
     display: flex;
     flex-direction: column;
       align-items: center;
@@ -8,9 +9,12 @@
 
 }
 
+
+
 .window-product-photo{
     width: 50%;
     height: 50%;
+    object-fit: contain;
 }
 
 .window-product-span{

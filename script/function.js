@@ -1,160 +1,7 @@
-const path_names = new Map([
-  ["", "Главная"],
-  ["index", "Главная"],
-  ["auto_goods", "Автотовары"],
-  ["auto_parts", "Автозапчасти"],
-  ["tires", "Шины"],
-  ["disks", "Диски"],
-  ["battery", "Аккумуляторы"],
-  ["detailling", "Детейлинг"],
-]);
-
-let id = 0;
-
-const categories = new Array("battery", "disks", "tires", "detailling");
-
-class ProductCard {
-  constructor(price, name, image, description, catalog) {
-    this.id = id++;
-    this.price = price;
-    this.name = name;
-    this.image = image;
-    this.catalog = catalog;
-    this.description = description;
-  }
-  window_product() {
-    const section = document.createElement("div");
-    section.classList.add("window-product");
-    const photo_product = document.createElement("img");
-    photo_product.classList.add("window-product-photo");
-    const price_product = document.createElement("span");
-    price_product.classList.add("window-product-span");
-    const name_product = document.createElement("span");
-    name_product.classList.add("window-product-span");
-    const description_product = document.createElement("span");
-    description_product.classList.add("window-product-span");
-
-    photo_product.src = this.image[0];
-    price_product.textContent = "Цена товара: " + this.price + "₽";
-    name_product.textContent = "Имя товара: " + this.name;
-    description_product.textContent = "Описание: " + this.description;
-
-    section.append(
-      name_product,
-      photo_product,
-      price_product,
-      description_product
-    );
-    return section;
-  }
-  html_catalog_card() {
-    const product_card = document.createElement("div");
-    product_card.classList.add("product-card");
-    const photo_product = document.createElement("img");
-    const price_product = document.createElement("span");
-    const name_product = document.createElement("span");
-    const btn_buy_product = document.createElement("buttton");
-
-    price_product.textContent = this.price + "₽";
-    name_product.textContent = this.name;
-    photo_product.src = this.image[0];
-
-    photo_product.classList.add("product-pard-photo");
-    btn_buy_product.classList.add("product-pard-button-buy");
-    price_product.classList.add("product-pard-price");
-    name_product.classList.add("product-pard-name");
-    btn_buy_product.textContent = "Купить";
-    product_card.append(
-      photo_product,
-      price_product,
-      name_product,
-      btn_buy_product
-    );
-
-    return product_card;
-  }
-}
-
-export let catalogProducts = [
-  new ProductCard(
-    4500,
-    "Аккумулятор Varta",
-    ["public/product/akb-varta.jpg"],
-    "Varta Blue Dynamic - высококачественный аккумулятор для автомобилей с повышенным энергопотреблением. Емкость 75 А/ч, пусковой ток 680 А. Технология Calcium Plus обеспечивает надежный запуск в любых погодных условиях. Подходит для автомобилей с системой Start-Stop.",
-    categories[0]
-  ),
-  new ProductCard(
-    5200,
-    "Аккумулятор Bosch",
-    ["public/product/akb-bosch.jpg"],
-    "Bosch S5 Silver - премиальный аккумулятор немецкого производства. Емкость 80 А/ч, пусковой ток 800 А. Инновационная технология Silver позволяет увеличить количество циклов заряда-разряда. Идеален для современных автомобилей с большим количеством электроники.",
-    categories[0]
-  ),
-  new ProductCard(
-    3800,
-    "Аккумулятор Delta",
-    ["public/product/delta.jpeg"],
-    "Delta GX - японский аккумулятор с технологией EFB (Enhanced Flooded Battery). Емкость 70 А/ч, пусковой ток 600 А. Усиленные пластины обеспечивают устойчивость к глубоким разрядам. Отличное решение для автомобилей с базовой системой Start-Stop.",
-    categories[0]
-  ),
-  new ProductCard(
-    12500,
-    'Диски литые 17"',
-    ["public/product/disks-lit.jpg"],
-    "Легкосплавные литые диски из алюминиевого сплава. Диаметр 17 дюймов, вылет ET45, ширина 7.5J, крепление 5x114.3. Современный дизайн с многолучевой конструкцией. Повышенная прочность при сниженном весе. Подходят для большинства современных седанов и кроссоверов.",
-    categories[1]
-  ),
-  new ProductCard(
-    8500,
-    "Диски штампованные",
-    ["public/product/disks-htamp.jpeg"],
-    "Штампованные стальные диски 16 дюймов. Классическое решение для бюджетных автомобилей. Высокая ремонтопригодность и прочность. В комплекте с декоративными колпаками. Подходят для эксплуатации в сложных дорожных условиях. Крепление 4x100, ширина 6.5J.",
-    categories[1]
-  ),
-  new ProductCard(
-    6500,
-    "Диски стальные",
-    ["public/product/disks-stal.jpg"],
-    "Стальные диски R15 для компактных автомобилей. Диаметр 15 дюймов, ширина 6J, вылет ET38. Простая и надежная конструкция. Отличный выбор для зимней резины. Устойчивы к механическим повреждениям. Легко ремонтируются при деформации.",
-    categories[1]
-  ),
-  new ProductCard(
-    9500,
-    "Летняя резина Bridgestone",
-    ["public/product/tires-bridgestone.jpg"],
-    "Bridgestone Turanza T005 - летние шины премиум-класса. Размер 205/55 R16 91V. Асимметричный рисунок протектора обеспечивает отличное сцепление на мокрой и сухой дороге. Технология NanoPro-Tech снижает сопротивление качению. Комфорт, безопасность и экономия топлива.",
-    categories[2]
-  ),
-  new ProductCard(
-    11200,
-    "Зимняя резина Michelin",
-    ["public/product/tires-michelin.jpg"],
-    "Michelin X-Ice North 4 - зимние шипованные шины для суровых зимних условий. Размер 205/55 R16 94T. 150 шипов на каждую шину обеспечивают уверенное сцепление на льду и укатанном снегу. Специальный состав резины сохраняет эластичность даже при -40°C. Система самоочистки протектора.",
-    categories[2]
-  ),
-  new ProductCard(
-    850,
-    "Полироль для кузова",
-    ["public/product/polirol.jpg"],
-    "Полироль-воск для автомобиля с нано-защитой. Образует прочное грязеотталкивающее покрытие. Заполняет мелкие царапины и восстанавливает блеск. Содержит УФ-фильтры для защиты краски от выцветания. Легко наносится и снимается. Объем 500 мл, хватает на 3-4 обработки.",
-    categories[3]
-  ),
-  new ProductCard(
-    450,
-    "Ароматизатор салона",
-    ["public/product/aromo.jpg"],
-    "Ароматизатор для автомобиля 'Свежесть Альп' с системой клип-картридж. Постоянное равномерное распространение аромата. Картриджа хватает на 30-45 дней. Регулируемая интенсивность запаха. Безопасен для аллергиков. Не содержит аэрозолей и газа. Приятный ненавязчивый аромат.",
-    categories[3]
-  ),
-  new ProductCard(
-    950,
-    "Воск для автомобиля",
-    ["public/product/vosk.png"],
-    "Жидкий воск-полироль с эффектом гидрофобизации. Создает эффект 'дождевой грязеотталкивающей пленки'. Защищает лакокрасочное покрытие от агрессивных воздействий окружающей среды. Облегчает мойку автомобиля. Эффект держится до 2 месяцев. Подходит для всех типов ЛКП.",
-    categories[3]
-  ),
-];
-
+import { ProductCard } from "./ProductCard.js";
+import { path_names } from "./container.js";
+import { catalogProducts } from "./container.js";
+import { catalogProductsBasket } from "./container.js";
 export function create_button_back() {
   const container = document.querySelector("header");
   const btn_back = document.createElement("button");
@@ -165,6 +12,7 @@ export function create_button_back() {
   });
   container?.prepend(btn_back);
 }
+
 export function create_footer() {
   create_button_basket();
   create_button_home_page();
@@ -180,26 +28,57 @@ function create_button_login_to_account() {
   container?.append(btn_img_login_to_account);
 
   btn_img_login_to_account.addEventListener("click", () => {
-    const body = document.querySelector("body");
+    showAuthDialog("login");
+  });
+}
 
-    const dialog = document.createElement("dialog");
+function showAuthDialog(type = "login") {
+  const body = document.querySelector("body");
+  let dialog = document.querySelector(".dialog-login-to-account");
+
+  if (!dialog) {
+    dialog = document.createElement("dialog");
     dialog.classList.add("dialog-login-to-account");
+    body?.append(dialog);
+  }
+  if (type == "login") {
     dialog.innerHTML = `
-    <button id = "close-login-to-account" class = "button-close-login-to-account">✕</button>
-        <h2>Вход в аккаунт</h2>
-        
+   <button id="close-auth-dialog" class="button-close-login-to-account">✕</button>
+    <h2>Вход в аккаунт</h2>
+     <section class="login-section">
+      <input type="text" placeholder="Логин" />
+      <input type="password" placeholder="Пароль" />
+      <button class="btn-login">Войти</button>
+      <button class="btn-register">Зарегистрироваться</button>
+    </section>
+    `;
+    dialog.querySelector(".btn-register").addEventListener("click", () => {
+      showAuthDialog("register");
+    });
+  } else if (type == "register") {
+    dialog.innerHTML = `
+   <button id="close-auth-dialog" class="button-close-login-to-account">✕</button>
+    <h2>Регистрация аккаунта</h2>
+           <section class="register-section">
+            <input type="text" placeholder="Имя" />
+            <input type="text" placeholder="Фамилия" />
+            <input type="text" placeholder="Телефон" />
+            <input type="text" placeholder="Логин" />
+            <input type="password" placeholder="Пароль"/>
+            <input type="password" placeholder="Повторите пароль"/>
+            <button class="btn-register-submit">Зарегистрироваться</button>
+            <button class="btn-login">Войти</button>
+        </section>
     `;
 
-    body?.append(dialog);
-
-    dialog.showModal();
-
-    const closeBtn = dialog.querySelector("#close-login-to-account");
-
-    closeBtn.addEventListener("click", () => {
-      dialog.close();
+    dialog.querySelector(".btn-login").addEventListener("click", () => {
+      showAuthDialog("login");
     });
+  }
+  dialog.querySelector("#close-auth-dialog").addEventListener("click", () => {
+    dialog.close();
   });
+  dialog.showModal();
 }
 
 function create_button_basket() {
@@ -235,10 +114,8 @@ function create_button_home_page() {
 }
 
 export function create_header() {
-
-
   const container = document.querySelector("header");
-  const section = document.createElement("section");
+  const section_search = document.createElement("section");
   const search_string = document.createElement("input");
   const btn_img_search = document.createElement("img");
 
@@ -247,9 +124,9 @@ export function create_header() {
   btn_img_search.classList.add("button-search");
 
   search_string.classList.add("search-string");
-  section.classList.add("section-search-string");
+  section_search.classList.add("section-search-string");
 
-    const save_theme = localStorage.getItem("theme");
+  const save_theme = localStorage.getItem("theme");
   if (save_theme) {
     document.documentElement.setAttribute("data-theme", save_theme);
   }
@@ -267,8 +144,8 @@ export function create_header() {
     }
   });
 
-  section.append(search_string, btn_img_search);
-  container?.append(section, btn_img_theme);
+  section_search.append(search_string, btn_img_search);
+  container?.append(section_search, btn_img_theme);
 }
 
 export function create_breadcrumbs() {
@@ -332,6 +209,20 @@ export function create_product_card() {
 
         // Переходим на страницу с параметром ID
         window.location.href = `product.html?id=${productIndex}`;
+      } else {
+        const savedBasket = localStorage.getItem("basketItems");
+        const catalogProductsBasketSave = savedBasket
+          ? JSON.parse(savedBasket)
+          : [];
+        catalogProductsBasket.length = 0; // Очищаем массив
+        catalogProductsBasket.push(...catalogProductsBasketSave);
+        catalogProductsBasket.push(catalogProducts.indexOf(product));
+        localStorage.setItem(
+          "basketItems",
+          JSON.stringify(catalogProductsBasket)
+        );
+        console.log(catalogProductsBasket);
+        alert("Товар добавлен в корзину!");
       }
     });
   }
